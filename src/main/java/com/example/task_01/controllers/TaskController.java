@@ -18,9 +18,9 @@ public class TaskController {
     }
 
     @GetMapping("/summer")
-    public String newSummerGreeting() {
-        Celebration summer = new Celebration("Solstice", "Summer");
+    public String newSummerGreeting(@RequestParam(value = "season", defaultValue = "Summer") String season) {
+        Celebration summer = new Celebration("Solstice", season);
         return "Happy" + " " + summer.getSeason()+ " " + summer.getMessage() + "!";
     }
-
 }
+
