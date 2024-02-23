@@ -17,4 +17,10 @@ public class TaskController {
         return "Good" + " " + greet.getTimeOfDay() + " " + greet.getName() + "!";
     }
 
+    @GetMapping("/summer")
+    public String newSummerGreeting() {
+        Celebration summer = new Celebration("Solstice", "Summer");
+        return "Happy" + " " + summer.getSeason()+ " " + summer.getMessage() + "!";
+    }
+
 }
